@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IbisBirdMark } from "@/components/IbisLogo";
 
 export default function Footer() {
   return (
@@ -8,23 +9,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-7 h-7 rounded-md bg-[#00D4FF] flex items-center justify-center">
-                <svg
-                  className="w-4 h-4 text-[#0A0A0F]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
-                </svg>
-              </div>
-              <span className="text-[17px] font-black tracking-tight text-white">
-                ibis<span style={{ color: "#00D4FF" }}>labs</span>
+              <span className="text-[#00D4FF]">
+                <IbisBirdMark className="w-7 h-7" />
+              </span>
+              <span
+                className="text-white"
+                style={{ fontSize: "17px", fontWeight: 800, fontFamily: "var(--font-playfair)", letterSpacing: "-0.01em" }}
+              >
+                Ibis <span style={{ color: "#00D4FF" }}>Labs</span>
               </span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">

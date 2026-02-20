@@ -96,11 +96,10 @@ const testimonials = [
 
 export default function HomePage() {
   return (
-    <div className="pt-16">
+    <div className="pt-[68px]">
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative bg-[#0A0A0F] dark-grid overflow-hidden">
-        {/* Radial glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#00D4FF]/5 rounded-full blur-3xl" />
         </div>
@@ -141,14 +140,16 @@ export default function HomePage() {
             </svg>
           </Link>
 
-          {/* Stats */}
+          {/* ── Stats — enhanced ── */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-24 max-w-3xl mx-auto">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white/[0.04] border border-white/[0.07] rounded-lg p-6 text-center"
+                className="dark-card-hover relative bg-white/[0.04] border border-white/[0.08] rounded-lg p-7 text-center overflow-hidden cursor-default"
               >
-                <div className="text-3xl font-black tracking-tight mb-1" style={{ color: "#00D4FF" }}>
+                {/* Top gradient accent line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/70 to-transparent" />
+                <div className="text-3xl font-black tracking-tight mb-1.5 text-gradient-accent">
                   {stat.value}
                 </div>
                 <div className="text-zinc-500 text-sm">{stat.label}</div>
@@ -158,31 +159,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FEATURES ─────────────────────────────────────────── */}
-      <section className="py-28 bg-white">
+      {/* ── FEATURES — dark, premium ──────────────────────────── */}
+      <section className="py-32 bg-[#0C0C13] dark-grid">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-4">
+          <div className="max-w-2xl mb-16">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-5">
               Platform
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight leading-tight mb-4">
-              Everything you need to manage IBS
+            <h2 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-[1.05] mb-5">
+              Everything you need
+              <br />to manage IBS
             </h2>
-            <p className="text-zinc-500 text-lg leading-relaxed">
+            <p className="text-zinc-400 text-lg leading-relaxed">
               Built with gastroenterologists and patients. Clinical evidence
               meets AI to give you tools that actually work.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {features.map((feature) => (
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {features.map((feature, i) => (
               <div
                 key={feature.title}
-                className="bg-zinc-50 border border-zinc-100 rounded-lg p-7 hover:border-zinc-200 hover:bg-white hover:shadow-lg transition-all duration-200 group"
+                className="dark-card-hover relative bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 overflow-hidden cursor-default group"
               >
-                <div className="w-10 h-10 bg-zinc-900 text-[#00D4FF] rounded-md flex items-center justify-center mb-5 group-hover:bg-[#0A0A0F] transition-colors">
+                {/* Corner number */}
+                <span className="absolute top-6 right-6 text-[11px] font-black text-zinc-700 tabular-nums">
+                  0{i + 1}
+                </span>
+                {/* Accent top line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/25 to-transparent" />
+
+                {/* Icon container */}
+                <div className="w-11 h-11 rounded-md bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] flex items-center justify-center mb-7 group-hover:bg-[#00D4FF]/15 group-hover:border-[#00D4FF]/35 transition-colors">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-black text-zinc-900 tracking-tight mb-2">
+
+                <h3 className="text-xl font-black text-white tracking-tight mb-2.5">
                   {feature.title}
                 </h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">
@@ -194,24 +206,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
-      <section className="py-28 bg-[#0A0A0F] dark-grid">
+      {/* ── HOW IT WORKS — enhanced ───────────────────────────── */}
+      <section className="py-32 bg-[#0A0A0F] dark-grid">
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-4">
-              How it works
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-              Three steps to relief
-            </h2>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-20">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-5">
+                How it works
+              </p>
+              <h2 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-[1.05]">
+                Three steps
+                <br />to relief
+              </h2>
+            </div>
+            <Link
+              href="/quiz"
+              className="inline-flex items-center gap-2 text-zinc-500 hover:text-[#00D4FF] transition-colors text-sm font-bold uppercase tracking-widest shrink-0"
+            >
+              Start now
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {howItWorks.map((step) => (
-              <div key={step.step} className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-8">
-                <div className="text-[56px] font-black leading-none mb-4 tracking-tight" style={{ color: "rgba(0,212,255,0.15)" }}>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {howItWorks.map((step, i) => (
+              <div
+                key={step.step}
+                className="dark-card-hover relative bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 overflow-hidden cursor-default"
+              >
+                {/* Top accent border */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent" />
+
+                {/* Step badge */}
+                <div className="flex items-center justify-between mb-6">
+                  <span
+                    className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm border"
+                    style={{
+                      color: "#00D4FF",
+                      borderColor: "rgba(0,212,255,0.2)",
+                      background: "rgba(0,212,255,0.06)",
+                    }}
+                  >
+                    Step {i + 1}
+                  </span>
+                  {i < howItWorks.length - 1 && (
+                    <svg className="hidden md:block w-4 h-4 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </div>
+
+                {/* Large gradient step number */}
+                <div className="text-[72px] font-black leading-none mb-5 tracking-tight text-gradient-accent" style={{ opacity: 0.35 }}>
                   {step.step}
                 </div>
-                <h3 className="text-lg font-black text-white tracking-tight mb-3">
+
+                <h3 className="text-xl font-black text-white tracking-tight mb-3">
                   {step.title}
                 </h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">

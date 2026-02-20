@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glow utilities */
+/* ── Glow utilities ─────────────────────────────────────── */
 .glow-accent {
   box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
 }
@@ -31,7 +31,57 @@ body {
   box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
 }
 
-/* Prose styles for blog content */
+/* ── Pulsing glow for CTA button ────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3), 0 0 20px rgba(0, 212, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
+  }
+}
+
+.btn-glow-pulse {
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+/* ── Nav link underline slide-in animation ──────────────── */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #00D4FF;
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* ── Dark card hover glow ───────────────────────────────── */
+.dark-card-hover {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.dark-card-hover:hover {
+  border-color: rgba(0, 212, 255, 0.25) !important;
+  box-shadow: 0 0 32px rgba(0, 212, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ── Prose styles for blog content ──────────────────────── */
 .prose h2 {
   font-size: 1.5rem;
   font-weight: 800;
@@ -91,15 +141,15 @@ body {
   text-decoration-color: rgba(0, 212, 255, 0.4);
 }
 
-/* Subtle grid pattern for dark sections */
+/* ── Subtle grid pattern for dark sections ──────────────── */
 .dark-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
-/* Gradient text utility */
+/* ── Gradient text utility ──────────────────────────────── */
 .text-gradient-accent {
   background: linear-gradient(135deg, #00D4FF 0%, #7B8EFF 100%);
   -webkit-background-clip: text;
