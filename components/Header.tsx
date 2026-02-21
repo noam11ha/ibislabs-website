@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { IbisBirdMark } from "@/components/IbisLogo";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,16 +12,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-[68px]">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <span className="text-[#00D4FF] group-hover:scale-105 transition-transform duration-200">
-              <IbisBirdMark className="w-7 h-7" />
-            </span>
-            <span
-              className="text-white"
-              style={{ fontSize: "17px", fontWeight: 800, fontFamily: "var(--font-playfair)", letterSpacing: "-0.01em" }}
-            >
-              Ibis <span style={{ color: "#00D4FF" }}>Labs</span>
-            </span>
+          <Link href="/" className="hover:opacity-80 transition-opacity" style={{ fontSize: "20px", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1 }}>
+            <span style={{ color: "white" }}>Ibis</span><span style={{ color: "#00D4FF" }}>Labs</span>
           </Link>
 
           {/* Desktop nav */}

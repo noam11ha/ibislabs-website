@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { IbisBirdMark } from "@/components/IbisLogo";
 
 export default function Footer() {
   return (
@@ -8,16 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5 mb-5">
-              <span className="text-[#00D4FF]">
-                <IbisBirdMark className="w-7 h-7" />
-              </span>
-              <span
-                className="text-white"
-                style={{ fontSize: "17px", fontWeight: 800, fontFamily: "var(--font-playfair)", letterSpacing: "-0.01em" }}
-              >
-                Ibis <span style={{ color: "#00D4FF" }}>Labs</span>
-              </span>
+            <div className="mb-5" style={{ fontSize: "20px", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1 }}>
+              <span style={{ color: "white" }}>Ibis</span><span style={{ color: "#00D4FF" }}>Labs</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               AI-powered IBS management that helps you identify triggers,
