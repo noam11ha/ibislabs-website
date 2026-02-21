@@ -276,7 +276,7 @@ export default function HomePage() {
       </section>
 
       {/* ── QUIZ CTA ─────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-[#0A0A0F]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className="rounded-lg p-12 text-center"
@@ -308,13 +308,13 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-28 bg-white border-t border-zinc-100">
+      <section className="py-24 bg-[#0A0A0F] dark-grid">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-16">
             <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-4">
               Early access
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight">
               Real people, real relief
             </h2>
           </div>
@@ -322,8 +322,10 @@ export default function HomePage() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="bg-zinc-50 border border-zinc-100 rounded-lg p-7"
+                className="dark-card-hover relative bg-white/[0.03] border border-white/[0.07] rounded-lg p-7 overflow-hidden cursor-default"
               >
+                {/* Accent top line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/25 to-transparent" />
                 <div className="flex mb-5 gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
@@ -331,16 +333,16 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-zinc-600 text-sm leading-relaxed mb-6">
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-md bg-zinc-900 text-[#00D4FF] font-black text-xs flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-md bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-black text-xs flex items-center justify-center flex-shrink-0">
                     {t.avatar}
                   </div>
                   <div>
-                    <p className="font-bold text-zinc-900 text-sm tracking-tight">{t.name}</p>
-                    <p className="text-zinc-400 text-xs">{t.detail}</p>
+                    <p className="font-bold text-white text-sm tracking-tight">{t.name}</p>
+                    <p className="text-zinc-500 text-xs">{t.detail}</p>
                   </div>
                 </div>
               </div>
