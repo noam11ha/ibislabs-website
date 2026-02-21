@@ -352,20 +352,20 @@ export default function HomePage() {
       </section>
 
       {/* ── BLOG PREVIEW ─────────────────────────────────────── */}
-      <section className="py-28 bg-zinc-50 border-t border-zinc-100">
+      <section className="py-28 bg-[#0C0C13] dark-grid">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-14">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-4">
                 Knowledge base
               </p>
-              <h2 className="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight">
                 Learn about IBS
               </h2>
             </div>
             <Link
               href="/blog"
-              className="hidden sm:flex items-center gap-1.5 text-zinc-900 font-bold text-sm hover:text-[#00D4FF] transition-colors uppercase tracking-wider"
+              className="hidden sm:flex items-center gap-1.5 text-zinc-400 font-bold text-sm hover:text-[#00D4FF] transition-colors uppercase tracking-wider"
             >
               All articles
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
