@@ -65,7 +65,7 @@ export default function WaitlistForm({ variant = "inline" }: WaitlistFormProps) 
     return (
       <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md">
         <div>
-          <label htmlFor="email-full" className="block text-sm font-semibold text-zinc-700 mb-1.5 tracking-tight">
+          <label htmlFor="email-full" className="block text-sm font-semibold text-zinc-400 mb-1.5 tracking-tight">
             Email address
           </label>
           <input
@@ -74,7 +74,7 @@ export default function WaitlistForm({ variant = "inline" }: WaitlistFormProps) 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="w-full px-4 py-3 rounded-md border border-zinc-200 bg-white text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#00D4FF] focus:border-transparent transition text-sm"
+            className="w-full px-4 py-3 rounded-md border border-white/10 bg-white/[0.06] text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#00D4FF] focus:border-transparent transition text-sm"
             required
           />
         </div>
@@ -84,7 +84,7 @@ export default function WaitlistForm({ variant = "inline" }: WaitlistFormProps) 
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full bg-[#0A0A0F] text-white py-3 rounded-md font-bold text-sm hover:bg-zinc-800 active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed tracking-tight"
+          className="w-full bg-[#00D4FF] text-[#0A0A0F] py-3 rounded-md font-bold text-sm hover:bg-[#00BFEB] active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed tracking-tight"
         >
           {status === "loading" ? (
             <span className="flex items-center justify-center gap-2">

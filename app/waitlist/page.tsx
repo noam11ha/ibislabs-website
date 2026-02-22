@@ -14,9 +14,9 @@ const perks = [
     description: "Be among the first to use IbisLabs before public launch.",
   },
   {
-    icon: "💚",
-    title: "Free Forever Plan",
-    description: "Early adopters get a free tier locked in for life.",
+    icon: "🎯",
+    title: "Personalized IBS Protocol",
+    description: "Get a custom management plan tailored to your specific IBS type and triggers.",
   },
   {
     icon: "🎯",
@@ -73,8 +73,8 @@ export default function WaitlistPage() {
             </p>
 
             {/* Form card */}
-            <div className="bg-white rounded-lg p-8 mb-5">
-              <h2 className="text-base font-black text-zinc-900 tracking-tight mb-5 uppercase tracking-widest text-xs text-zinc-500">
+            <div className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 mb-5">
+              <h2 className="text-xs font-black text-zinc-500 tracking-widest uppercase mb-5">
                 Reserve your spot
               </h2>
               <WaitlistForm variant="full" />
