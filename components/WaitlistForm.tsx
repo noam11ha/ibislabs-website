@@ -13,14 +13,28 @@ export default function WaitlistForm({ variant = "inline" }: WaitlistFormProps) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
-      setErrorMessage("Please enter a valid email address.");
-      return;
-    }
     setStatus("loading");
     setErrorMessage("");
-    await new Promise((res) => setTimeout(res, 1000));
-    setStatus("success");
+
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMessage(data.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+      } else {
+        setStatus("success");
+      }
+    } catch {
+      setErrorMessage("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -99,7 +113,7 @@ export default function WaitlistForm({ variant = "inline" }: WaitlistFormProps) 
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
-          if (errorMessage) setErrorMessage("");
+          if (status === "error") { setStatus("idle"); setErrorMessage(""); }
         }}
         placeholder="Enter your email"
         className="flex-1 px-4 py-3 rounded-md border border-white/10 bg-white/8 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#00D4FF] focus:border-transparent transition text-sm"
