@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: "Ibis Labs Waitlist <waitlist@ibislabs.io>",
-      to: "team@ibislabs.io",
+      to: "noam11ha.apple@gmail.com",
       subject: `New waitlist signup: ${email}`,
       html: `
         <p>A new user joined the Ibis Labs waitlist.</p>
