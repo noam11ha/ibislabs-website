@@ -1,14 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #09090b;
-  --accent: #00D4FF;
-  --accent-dim: rgba(0, 212, 255, 0.15);
-  --dark-bg: #0A0A0F;
-  --dark-surface: #111118;
-  --dark-card: #16161E;
-  --dark-border: rgba(255, 255, 255, 0.07);
+  --background: #FAF7F2;
+  --foreground: #1C1C1A;
+  --accent: #4A7C59;
+  --border: #E8E4DC;
 }
 
 html {
@@ -22,30 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Glow utilities ─────────────────────────────────────── */
-.glow-accent {
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
-}
-
-.glow-accent-sm {
-  box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
-}
-
-/* ── Pulsing glow for CTA button ────────────────────────── */
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3), 0 0 20px rgba(0, 212, 255, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 16px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
-  }
-}
-
-.btn-glow-pulse {
-  animation: glow-pulse 2.4s ease-in-out infinite;
-}
-
-/* ── Nav link underline slide-in animation ──────────────── */
+/* ── Nav link underline slide-in ────────────────────────── */
 .nav-link {
   position: relative;
   padding-bottom: 2px;
@@ -57,8 +30,8 @@ body {
   bottom: -1px;
   left: 0;
   width: 0;
-  height: 1px;
-  background: #00D4FF;
+  height: 1.5px;
+  background: #4A7C59;
   transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -67,17 +40,51 @@ body {
 }
 
 .nav-link:hover {
+  color: #1C1C1A;
+}
+
+/* White underline variant for transparent (hero) nav state */
+.nav-link-white::after {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.nav-link-white:hover {
   color: #ffffff;
 }
 
-/* ── Dark card hover glow ───────────────────────────────── */
-.dark-card-hover {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+/* ── Hero gradient + grain texture ─────────────────────── */
+.hero-grain {
+  background: radial-gradient(
+    ellipse at 28% 52%,
+    #5A8C69 0%,
+    #4A7C59 38%,
+    #3E7050 62%,
+    #3A6B48 100%
+  );
+  position: relative;
+  isolation: isolate;
 }
 
-.dark-card-hover:hover {
-  border-color: rgba(0, 212, 255, 0.25) !important;
-  box-shadow: 0 0 32px rgba(0, 212, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.4);
+.hero-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  opacity: 0.48;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Warm card hover ────────────────────────────────────── */
+.warm-card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.warm-card-hover:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
@@ -85,7 +92,7 @@ body {
 .prose h2 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #09090b;
+  color: #1C1C1A;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   line-height: 1.25;
@@ -95,14 +102,14 @@ body {
 .prose h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #18181b;
+  color: #1C1C1A;
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
   letter-spacing: -0.015em;
 }
 
 .prose p {
-  color: #52525b;
+  color: #6B6B67;
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }
@@ -120,39 +127,23 @@ body {
 }
 
 .prose li {
-  color: #52525b;
+  color: #6B6B67;
   line-height: 1.8;
   margin-bottom: 0.35rem;
 }
 
 .prose strong {
-  color: #09090b;
+  color: #1C1C1A;
   font-weight: 700;
 }
 
 .prose hr {
-  border-color: #e4e4e7;
+  border-color: #E8E4DC;
   margin: 2.5rem 0;
 }
 
 .prose a {
-  color: #00D4FF;
+  color: #4A7C59;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 212, 255, 0.4);
-}
-
-/* ── Subtle grid pattern for dark sections ──────────────── */
-.dark-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-}
-
-/* ── Gradient text utility ──────────────────────────────── */
-.text-gradient-accent {
-  background: linear-gradient(135deg, #00D4FF 0%, #7B8EFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-decoration-color: rgba(74, 124, 89, 0.4);
 }

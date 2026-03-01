@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "1 in 7", label: "adults worldwide have IBS" },
+  { value: "11 years", label: "average time to find effective IBS relief" },
   { value: "4 years", label: "average time to diagnosis" },
   { value: "73%", label: "improvement with personalized care" },
 ];
@@ -96,108 +96,117 @@ const testimonials = [
 
 export default function HomePage() {
   return (
-    <div className="pt-[68px]">
+    <div>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#0A0A0F] dark-grid overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <section className="hero-grain overflow-hidden flex flex-col" style={{ minHeight: "100vh" }}>
+
+        {/* 1 + 2: Label & Headline */}
+        <div
+          className="flex flex-col items-center text-center px-4 sm:px-6 lg:px-8"
+          style={{ paddingTop: "140px", paddingBottom: "8px" }}
+        >
+          <p className="text-white/50 text-[11px] font-semibold uppercase tracking-[0.22em] mb-7">
+            Personalized IBS Care
+          </p>
+          <h1
+            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-[58px] sm:text-[74px] lg:text-[84px] font-bold text-white leading-[1.05] tracking-tight"
+          >
+            Your gut, finally<br />understood.
+          </h1>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-28 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-[#00D4FF]/25 bg-[#00D4FF]/5 text-[#00D4FF] rounded-md px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest mb-10">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF] animate-pulse" />
-            Now accepting waitlist applications
+        {/* 3: Person image — explicit vh height, feet flush at bottom */}
+        <div className="flex flex-1 items-end justify-center overflow-hidden">
+          <img
+            src="/person-man.png"
+            alt=""
+            style={{
+              height: "50vh",
+              width: "auto",
+              maxWidth: "none",
+              display: "block",
+              flexShrink: 0,
+            }}
+          />
+        </div>
+
+        {/* 4: Form & microcopy */}
+        <div
+          className="flex flex-col items-center text-center px-4 sm:px-6 lg:px-8"
+          style={{ paddingTop: "28px", paddingBottom: "56px" }}
+        >
+          <WaitlistForm variant="hero-green" />
+          <div className="mt-5 flex items-center gap-4">
+            <p className="text-white/45 text-xs">No spam. Unsubscribe anytime.</p>
+            <span className="text-white/25 text-xs">·</span>
+            <Link
+              href="/quiz"
+              className="text-white/55 hover:text-white/85 transition-colors text-xs underline underline-offset-2"
+            >
+              Or take the free IBS quiz
+            </Link>
           </div>
+        </div>
 
-          {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-[80px] font-black text-white leading-[1.05] tracking-[-0.04em] mb-6">
-            Finally understand
-            <span className="block">
-              your{" "}
-              <span style={{ color: "#00D4FF" }}>IBS.</span>
-            </span>
-          </h1>
+      </section>
 
-          <p className="text-lg sm:text-xl text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
-            IbisLabs is the AI-powered platform that identifies your IBS type,
-            discovers your personal triggers, and builds a personalized protocol
-            for lasting relief.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <WaitlistForm variant="hero" />
-          </div>
-
-          <Link
-            href="/quiz"
-            className="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-300 transition-colors text-sm font-medium"
-          >
-            Or take the free IBS type quiz first
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-
-          {/* ── Stats — enhanced ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-24 max-w-3xl mx-auto">
+      {/* ── STATS STRIP ──────────────────────────────────────── */}
+      <section className="bg-[#FAF7F2] py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="dark-card-hover relative bg-white/[0.04] border border-white/[0.08] rounded-lg p-7 text-center overflow-hidden cursor-default"
+                className="warm-card-hover bg-white border border-[#E8E4DC] rounded-2xl p-7 text-center shadow-sm cursor-default"
               >
-                {/* Top gradient accent line */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/70 to-transparent" />
-                <div className="text-3xl font-black tracking-tight mb-1.5 text-gradient-accent">
+                <div className="text-3xl font-bold tracking-tight mb-1.5" style={{ color: "#4A7C59" }}>
                   {stat.value}
                 </div>
-                <div className="text-zinc-500 text-sm">{stat.label}</div>
+                <div className="text-[#6B6B67] text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FEATURES — dark, premium ──────────────────────────── */}
-      <section className="py-32 bg-[#0C0C13] dark-grid">
+      {/* ── FEATURES ─────────────────────────────────────────── */}
+      <section className="py-32 bg-[#EEF2EC]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-5">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#4A7C59] mb-5">
               Platform
             </p>
-            <h2 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-[1.05] mb-5">
+            <h2
+              style={{ fontFamily: "var(--font-playfair)" }}
+              className="text-5xl sm:text-6xl font-bold text-[#1C1C1A] tracking-tight leading-[1.05] mb-5"
+            >
               Everything you need
               <br />to manage IBS
             </h2>
-            <p className="text-zinc-400 text-lg leading-relaxed">
+            <p className="text-[#6B6B67] text-lg leading-relaxed">
               Built with gastroenterologists and patients. Clinical evidence
               meets AI to give you tools that actually work.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {features.map((feature, i) => (
               <div
                 key={feature.title}
-                className="dark-card-hover relative bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 overflow-hidden cursor-default group"
+                className="warm-card-hover relative bg-white border border-[#E8E4DC] rounded-2xl p-8 shadow-sm cursor-default"
               >
-                {/* Corner number */}
-                <span className="absolute top-6 right-6 text-[11px] font-black text-zinc-700 tabular-nums">
+                <span className="absolute top-6 right-6 text-[11px] font-semibold text-[#6B6B67]/40 tabular-nums">
                   0{i + 1}
                 </span>
-                {/* Accent top line */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/25 to-transparent" />
-
-                {/* Icon container */}
-                <div className="w-11 h-11 rounded-md bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] flex items-center justify-center mb-7 group-hover:bg-[#00D4FF]/15 group-hover:border-[#00D4FF]/35 transition-colors">
+                <div className="w-11 h-11 rounded-xl bg-[#4A7C59]/10 text-[#4A7C59] flex items-center justify-center mb-7">
                   {feature.icon}
                 </div>
-
-                <h3 className="text-xl font-black text-white tracking-tight mb-2.5">
+                <h3 className="text-xl font-bold text-[#1C1C1A] tracking-tight mb-2.5">
                   {feature.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed">
+                <p className="text-[#6B6B67] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -206,22 +215,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS — enhanced ───────────────────────────── */}
-      <section className="py-32 bg-[#0A0A0F] dark-grid">
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
+      <section className="py-32 bg-[#FAF7F2]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-20">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#4A7C59] mb-5">
                 How it works
               </p>
-              <h2 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-[1.05]">
+              <h2
+                style={{ fontFamily: "var(--font-playfair)" }}
+                className="text-5xl sm:text-6xl font-bold text-[#1C1C1A] tracking-tight leading-[1.05]"
+              >
                 Three steps
                 <br />to relief
               </h2>
             </div>
             <Link
               href="/quiz"
-              className="inline-flex items-center gap-2 text-zinc-500 hover:text-[#00D4FF] transition-colors text-sm font-bold uppercase tracking-widest shrink-0"
+              className="inline-flex items-center gap-2 text-[#6B6B67] hover:text-[#4A7C59] transition-colors text-sm font-semibold uppercase tracking-widest shrink-0"
             >
               Start now
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -234,39 +246,39 @@ export default function HomePage() {
             {howItWorks.map((step, i) => (
               <div
                 key={step.step}
-                className="dark-card-hover relative bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 overflow-hidden cursor-default"
+                className="warm-card-hover relative bg-white border border-[#E8E4DC] rounded-2xl p-8 shadow-sm cursor-default"
               >
-                {/* Top accent border */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent" />
-
                 {/* Step badge */}
                 <div className="flex items-center justify-between mb-6">
                   <span
-                    className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm border"
+                    className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg border"
                     style={{
-                      color: "#00D4FF",
-                      borderColor: "rgba(0,212,255,0.2)",
-                      background: "rgba(0,212,255,0.06)",
+                      color: "#4A7C59",
+                      borderColor: "rgba(74,124,89,0.2)",
+                      background: "rgba(74,124,89,0.06)",
                     }}
                   >
                     Step {i + 1}
                   </span>
                   {i < howItWorks.length - 1 && (
-                    <svg className="hidden md:block w-4 h-4 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <svg className="hidden md:block w-4 h-4 text-[#E8E4DC]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   )}
                 </div>
 
-                {/* Large gradient step number */}
-                <div className="text-[72px] font-black leading-none mb-5 tracking-tight text-gradient-accent" style={{ opacity: 0.35 }}>
+                {/* Large step number */}
+                <div
+                  className="text-[72px] font-bold leading-none mb-5 tracking-tight"
+                  style={{ color: "#4A7C59", opacity: 0.15, fontFamily: "var(--font-playfair)" }}
+                >
                   {step.step}
                 </div>
 
-                <h3 className="text-xl font-black text-white tracking-tight mb-3">
+                <h3 className="text-xl font-bold text-[#1C1C1A] tracking-tight mb-3">
                   {step.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed">
+                <p className="text-[#6B6B67] text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -276,30 +288,33 @@ export default function HomePage() {
       </section>
 
       {/* ── QUIZ CTA ─────────────────────────────────────────── */}
-      <section className="py-16 bg-[#0A0A0F]">
+      <section className="py-20 bg-[#EEF2EC]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="rounded-lg p-12 text-center"
+            className="rounded-2xl p-12 text-center"
             style={{
-              background: "#0A0A0F",
-              border: "1px solid rgba(0,212,255,0.2)",
-              boxShadow: "0 0 60px rgba(0,212,255,0.07), inset 0 0 60px rgba(0,212,255,0.03)",
+              background: "#FFFFFF",
+              border: "1px solid #E8E4DC",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
             }}
           >
-            <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#4A7C59] mb-6">
               Free · 3 minutes · Instant results
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+            <h2
+              style={{ fontFamily: "var(--font-playfair)" }}
+              className="text-4xl sm:text-5xl font-bold text-[#1C1C1A] tracking-tight leading-tight mb-4"
+            >
               Which type of IBS
               <br />do you have?
             </h2>
-            <p className="text-zinc-400 max-w-md mx-auto mb-10 leading-relaxed">
+            <p className="text-[#6B6B67] max-w-md mx-auto mb-10 leading-relaxed">
               IBS-C, IBS-D, IBS-M, and IBS-U each require a different approach.
               Our quiz identifies yours.
             </p>
             <Link
               href="/quiz"
-              className="inline-block bg-[#00D4FF] text-[#0A0A0F] px-10 py-4 rounded-md font-black text-base hover:bg-[#00BFEB] active:scale-[0.99] transition-all glow-accent tracking-tight"
+              className="inline-block bg-[#4A7C59] text-white px-10 py-4 rounded-xl font-semibold text-base hover:bg-[#3d6b4a] active:scale-[0.99] transition-all"
             >
               Take the Free IBS Quiz
             </Link>
@@ -308,13 +323,16 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-24 bg-[#0A0A0F] dark-grid">
+      <section className="py-24 bg-[#FAF7F2]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#4A7C59] mb-4">
               Early access
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            <h2
+              style={{ fontFamily: "var(--font-playfair)" }}
+              className="text-4xl sm:text-5xl font-bold text-[#1C1C1A] tracking-tight leading-tight"
+            >
               Real people, real relief
             </h2>
           </div>
@@ -322,10 +340,8 @@ export default function HomePage() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="dark-card-hover relative bg-white/[0.03] border border-white/[0.07] rounded-lg p-7 overflow-hidden cursor-default"
+                className="warm-card-hover bg-white border border-[#E8E4DC] rounded-2xl p-7 shadow-sm cursor-default"
               >
-                {/* Accent top line */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D4FF]/25 to-transparent" />
                 <div className="flex mb-5 gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
@@ -333,16 +349,16 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                <p className="text-[#6B6B67] text-sm leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-md bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-black text-xs flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#4A7C59]/10 text-[#4A7C59] font-bold text-xs flex items-center justify-center flex-shrink-0">
                     {t.avatar}
                   </div>
                   <div>
-                    <p className="font-bold text-white text-sm tracking-tight">{t.name}</p>
-                    <p className="text-zinc-500 text-xs">{t.detail}</p>
+                    <p className="font-bold text-[#1C1C1A] text-sm tracking-tight">{t.name}</p>
+                    <p className="text-[#6B6B67] text-xs">{t.detail}</p>
                   </div>
                 </div>
               </div>
@@ -352,20 +368,23 @@ export default function HomePage() {
       </section>
 
       {/* ── BLOG PREVIEW ─────────────────────────────────────── */}
-      <section className="py-28 bg-[#0C0C13] dark-grid">
+      <section className="py-28 bg-[#EEF2EC]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-14">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#4A7C59] mb-4">
                 Knowledge base
               </p>
-              <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+              <h2
+                style={{ fontFamily: "var(--font-playfair)" }}
+                className="text-4xl sm:text-5xl font-bold text-[#1C1C1A] tracking-tight leading-tight"
+              >
                 Learn about IBS
               </h2>
             </div>
             <Link
               href="/blog"
-              className="hidden sm:flex items-center gap-1.5 text-zinc-400 font-bold text-sm hover:text-[#00D4FF] transition-colors uppercase tracking-wider"
+              className="hidden sm:flex items-center gap-1.5 text-[#1C1C1A] font-semibold text-sm hover:text-[#4A7C59] transition-colors uppercase tracking-wider"
             >
               All articles
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -382,25 +401,25 @@ export default function HomePage() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────────────────── */}
-      <section className="py-32 bg-[#0A0A0F] dark-grid">
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00D4FF]/4 rounded-full blur-3xl" />
-          </div>
-          <p className="text-xs font-bold uppercase tracking-widest text-[#00D4FF] mb-6">
+      <section className="py-32 bg-[#4A7C59]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/70 mb-6">
             Early access
           </p>
-          <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+          <h2
+            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-5"
+          >
             Take control of your IBS.
           </h2>
-          <p className="text-zinc-400 text-lg mb-12 leading-relaxed max-w-md mx-auto">
-            Join thousands on our waitlist for early access to the first truly
+          <p className="text-white/75 text-lg mb-12 leading-relaxed max-w-md mx-auto">
+            Join our waitlist for early access to the first truly
             personalized IBS management platform.
           </p>
           <div className="flex flex-col items-center gap-4">
-            <WaitlistForm variant="hero" />
-            <p className="text-zinc-600 text-sm">
-              Free for early adopters · No spam · Unsubscribe anytime
+            <WaitlistForm variant="cta" />
+            <p className="text-white/60 text-sm">
+              No spam · Unsubscribe anytime
             </p>
           </div>
         </div>

@@ -17,10 +17,8 @@ export const metadata: Metadata = {
 
 export default function QuizPage() {
   return (
-    <div className="pt-16 min-h-screen bg-[#0A0A0F] dark-grid">
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Ambient glow */}
-        <div className="absolute top-32 left-1/2 -translate-x-1/2 w-96 h-64 bg-[#00D4FF]/4 rounded-full blur-3xl pointer-events-none" />
+    <div className="pt-16 min-h-screen bg-[#FAF7F2]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Quiz />
       </div>
     </div>

@@ -115,8 +115,8 @@ const results: Record<IBSType, ResultConfig> = {
     tagline: "Constipation-Predominant IBS",
     description:
       "Your answers suggest you may have IBS-C, the constipation subtype. This means your gut moves more slowly than usual, leading to infrequent, hard, or difficult-to-pass stools along with bloating and discomfort.",
-    accentColor: "#F59E0B",
-    borderColor: "rgba(245,158,11,0.3)",
+    accentColor: "#B45309",
+    borderColor: "rgba(180,83,9,0.25)",
     tips: [
       "Increase soluble fiber intake (psyllium, oats, flaxseed)",
       "Stay well-hydrated — aim for 8–10 glasses of water daily",
@@ -131,8 +131,8 @@ const results: Record<IBSType, ResultConfig> = {
     tagline: "Diarrhea-Predominant IBS",
     description:
       "Your answers suggest you may have IBS-D, the diarrhea subtype. This means your gut moves faster than it should, causing frequent, loose, or urgent bowel movements — often with significant cramping.",
-    accentColor: "#00D4FF",
-    borderColor: "rgba(0,212,255,0.3)",
+    accentColor: "#0369A1",
+    borderColor: "rgba(3,105,161,0.25)",
     tips: [
       "Follow a low-FODMAP diet to identify food triggers",
       "Avoid caffeine, alcohol, and high-fat meals",
@@ -147,8 +147,8 @@ const results: Record<IBSType, ResultConfig> = {
     tagline: "Mixed IBS (Alternating)",
     description:
       "Your answers suggest you may have IBS-M, the mixed subtype. You experience both constipation and diarrhea — often alternating unpredictably. This is often the most challenging subtype to manage, but the right approach can bring real relief.",
-    accentColor: "#A78BFA",
-    borderColor: "rgba(167,139,250,0.3)",
+    accentColor: "#7C3AED",
+    borderColor: "rgba(124,58,237,0.25)",
     tips: [
       "Track symptoms in detail to spot your personal patterns",
       "The low-FODMAP diet works well for IBS-M",
@@ -163,8 +163,8 @@ const results: Record<IBSType, ResultConfig> = {
     tagline: "Unclassified IBS",
     description:
       "Your answers suggest IBS-U — unclassified IBS. Your symptoms don't fit neatly into one subtype, which is common. You may need more time tracking your symptoms, or your pattern may emerge more clearly with monitoring.",
-    accentColor: "#94A3B8",
-    borderColor: "rgba(148,163,184,0.3)",
+    accentColor: "#4A7C59",
+    borderColor: "rgba(74,124,89,0.25)",
     tips: [
       "Keep a detailed food and symptom diary for 2–4 weeks",
       "Track your stool using the Bristol Stool Scale",
@@ -237,13 +237,13 @@ export default function Quiz() {
   if (!started) {
     return (
       <div className="text-center py-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-white/[0.06] border border-white/10 mb-8 text-3xl">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#4A7C59]/10 border border-[#4A7C59]/20 mb-8 text-3xl">
           🧠
         </div>
-        <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+        <h2 style={{ fontFamily: "var(--font-playfair)" }} className="text-4xl sm:text-5xl font-bold text-[#1C1C1A] tracking-tight leading-tight mb-4">
           Free IBS Type Quiz
         </h2>
-        <p className="text-zinc-400 max-w-md mx-auto mb-10 text-lg leading-relaxed">
+        <p className="text-[#6B6B67] max-w-md mx-auto mb-10 text-lg leading-relaxed">
           Answer 8 questions about your symptoms to discover which IBS subtype
           you may have — and what to do about it.
         </p>
@@ -252,11 +252,11 @@ export default function Quiz() {
           {(["IBS-C", "IBS-D", "IBS-M", "IBS-U"] as IBSType[]).map((t) => (
             <span
               key={t}
-              className="px-4 py-1.5 rounded-md text-xs font-black uppercase tracking-widest border"
+              className="px-4 py-1.5 rounded-xl text-xs font-bold uppercase tracking-widest border"
               style={{
                 color: results[t].accentColor,
                 borderColor: results[t].borderColor,
-                background: results[t].borderColor.replace("0.3", "0.08"),
+                background: results[t].borderColor.replace("0.25", "0.08"),
               }}
             >
               {t}
@@ -264,14 +264,14 @@ export default function Quiz() {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-zinc-500 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#6B6B67] mb-12">
           {[
             { label: "Takes ~3 minutes" },
             { label: "100% private" },
             { label: "Instant results" },
           ].map((item) => (
             <span key={item.label} className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A7C59]" />
               {item.label}
             </span>
           ))}
@@ -279,11 +279,11 @@ export default function Quiz() {
 
         <button
           onClick={() => setStarted(true)}
-          className="bg-[#00D4FF] text-[#0A0A0F] px-10 py-4 rounded-md font-black text-base hover:bg-[#00BFEB] active:scale-[0.99] transition-all glow-accent tracking-tight"
+          className="bg-[#4A7C59] text-white px-10 py-4 rounded-xl font-semibold text-base hover:bg-[#3d6b4a] active:scale-[0.99] transition-all"
         >
           Start the Quiz →
         </button>
-        <p className="mt-5 text-xs text-zinc-600">
+        <p className="mt-5 text-xs text-[#6B6B67]">
           Not a medical diagnosis. Always consult your doctor.
         </p>
       </div>
@@ -297,38 +297,35 @@ export default function Quiz() {
       <div className="max-w-2xl mx-auto">
         {/* Result card */}
         <div
-          className="rounded-lg border p-8 mb-5 text-center"
-          style={{
-            background: "rgba(255,255,255,0.03)",
-            borderColor: config.borderColor,
-          }}
+          className="bg-white rounded-2xl border p-8 mb-5 text-center shadow-sm"
+          style={{ borderColor: config.borderColor }}
         >
           <div className="text-4xl mb-4">{config.emoji}</div>
           <div
-            className="inline-block px-3.5 py-1 rounded-md text-xs font-black uppercase tracking-widest border mb-4"
-            style={{ color: config.accentColor, borderColor: config.borderColor, background: config.borderColor.replace("0.3", "0.1") }}
+            className="inline-block px-3.5 py-1 rounded-xl text-xs font-bold uppercase tracking-widest border mb-4"
+            style={{ color: config.accentColor, borderColor: config.borderColor, background: config.borderColor.replace("0.25", "0.08") }}
           >
             {config.type}
           </div>
-          <h2 className="text-2xl font-black text-white tracking-tight mb-3">
+          <h2 className="text-2xl font-bold text-[#1C1C1A] tracking-tight mb-3">
             {config.tagline}
           </h2>
-          <p className="text-zinc-400 leading-relaxed max-w-xl mx-auto text-sm">
+          <p className="text-[#6B6B67] leading-relaxed max-w-xl mx-auto text-sm">
             {config.description}
           </p>
         </div>
 
         {/* Tips */}
-        <div className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-7 mb-5">
-          <h3 className="font-black text-white tracking-tight mb-5 text-base uppercase tracking-widest text-xs" style={{ color: config.accentColor }}>
+        <div className="bg-white border border-[#E8E4DC] rounded-2xl p-7 mb-5 shadow-sm">
+          <h3 className="font-bold text-xs uppercase tracking-widest mb-5" style={{ color: config.accentColor }}>
             What to do next
           </h3>
           <ul className="space-y-4">
             {config.tips.map((tip, i) => (
-              <li key={i} className="flex items-start gap-3 text-zinc-400 text-sm">
+              <li key={i} className="flex items-start gap-3 text-[#6B6B67] text-sm">
                 <span
-                  className="mt-0.5 w-5 h-5 rounded-md text-[10px] flex items-center justify-center font-black flex-shrink-0"
-                  style={{ background: config.borderColor.replace("0.3", "0.15"), color: config.accentColor }}
+                  className="mt-0.5 w-5 h-5 rounded-lg text-[10px] flex items-center justify-center font-bold flex-shrink-0"
+                  style={{ background: config.borderColor.replace("0.25", "0.1"), color: config.accentColor }}
                 >
                   {i + 1}
                 </span>
@@ -339,20 +336,17 @@ export default function Quiz() {
         </div>
 
         {/* CTA */}
-        <div
-          className="rounded-lg p-7 text-center border"
-          style={{ background: "#0A0A0F", borderColor: "rgba(0,212,255,0.2)", boxShadow: "0 0 40px rgba(0,212,255,0.06)" }}
-        >
-          <h3 className="font-black text-white tracking-tight text-lg mb-2">
+        <div className="rounded-2xl p-7 text-center bg-[#4A7C59]">
+          <h3 className="font-bold text-white tracking-tight text-lg mb-2">
             Get personalized {result} guidance
           </h3>
-          <p className="text-zinc-400 text-sm mb-6">
+          <p className="text-white/75 text-sm mb-6">
             IbisLabs is building an AI-powered app to help you track triggers,
             personalize your diet, and find lasting relief.
           </p>
           <Link
             href="/waitlist"
-            className="inline-block bg-[#00D4FF] text-[#0A0A0F] px-8 py-3 rounded-md font-black text-sm hover:bg-[#00BFEB] transition-colors glow-accent-sm"
+            className="inline-block bg-white text-[#4A7C59] px-8 py-3 rounded-xl font-semibold text-sm hover:bg-[#FAF7F2] transition-colors"
           >
             Join the Waitlist — Free
           </Link>
@@ -361,7 +355,7 @@ export default function Quiz() {
         <div className="text-center mt-6">
           <button
             onClick={handleRestart}
-            className="text-zinc-600 hover:text-zinc-400 text-sm transition-colors underline underline-offset-4"
+            className="text-[#6B6B67] hover:text-[#1C1C1A] text-sm transition-colors underline underline-offset-4"
           >
             Retake the quiz
           </button>
@@ -376,23 +370,23 @@ export default function Quiz() {
       {/* Progress */}
       <div className="mb-10">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-xs text-zinc-600 font-medium uppercase tracking-wider">
+          <span className="text-xs text-[#6B6B67] font-medium uppercase tracking-wider">
             Question {currentQuestion + 1} / {questions.length}
           </span>
-          <span className="text-xs font-bold" style={{ color: "#00D4FF" }}>
+          <span className="text-xs font-bold text-[#4A7C59]">
             {Math.round(progress)}%
           </span>
         </div>
-        <div className="h-[3px] bg-white/[0.06] rounded-full overflow-hidden">
+        <div className="h-[3px] bg-[#E8E4DC] rounded-full overflow-hidden">
           <div
-            className="h-full rounded-full transition-all duration-500"
-            style={{ width: `${progress}%`, background: "#00D4FF" }}
+            className="h-full rounded-full transition-all duration-500 bg-[#4A7C59]"
+            style={{ width: `${progress}%` }}
           />
         </div>
       </div>
 
       {/* Question */}
-      <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight mb-8">
+      <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1A] tracking-tight leading-tight mb-8">
         {question.question}
       </h2>
 
@@ -402,32 +396,32 @@ export default function Quiz() {
           <button
             key={idx}
             onClick={() => handleSelect(idx)}
-            className="w-full text-left px-5 py-4 rounded-md border font-medium text-sm transition-all"
+            className="w-full text-left px-5 py-4 rounded-xl border font-medium text-sm transition-all"
             style={
               selectedOption === idx
                 ? {
-                    borderColor: "rgba(0,212,255,0.6)",
-                    background: "rgba(0,212,255,0.08)",
-                    color: "#00D4FF",
+                    borderColor: "#4A7C59",
+                    background: "rgba(74,124,89,0.08)",
+                    color: "#4A7C59",
                   }
                 : {
-                    borderColor: "rgba(255,255,255,0.07)",
-                    background: "rgba(255,255,255,0.03)",
-                    color: "#a1a1aa",
+                    borderColor: "#E8E4DC",
+                    background: "#FFFFFF",
+                    color: "#1C1C1A",
                   }
             }
           >
             <span className="flex items-center gap-3">
               <span
-                className="w-4 h-4 rounded-sm border flex-shrink-0 flex items-center justify-center transition-colors"
+                className="w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center transition-colors"
                 style={
                   selectedOption === idx
-                    ? { borderColor: "#00D4FF", background: "#00D4FF" }
-                    : { borderColor: "rgba(255,255,255,0.15)" }
+                    ? { borderColor: "#4A7C59", background: "#4A7C59" }
+                    : { borderColor: "#E8E4DC" }
                 }
               >
                 {selectedOption === idx && (
-                  <svg className="w-2.5 h-2.5 text-[#0A0A0F]" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 )}
@@ -443,7 +437,7 @@ export default function Quiz() {
         <button
           onClick={handleBack}
           disabled={currentQuestion === 0}
-          className="flex items-center gap-2 text-zinc-600 hover:text-zinc-300 disabled:opacity-25 disabled:cursor-not-allowed transition-colors text-sm font-medium"
+          className="flex items-center gap-2 text-[#6B6B67] hover:text-[#1C1C1A] disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-sm font-medium"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -453,7 +447,7 @@ export default function Quiz() {
         <button
           onClick={handleNext}
           disabled={selectedOption === null}
-          className="bg-[#00D4FF] text-[#0A0A0F] px-8 py-3 rounded-md font-black text-sm hover:bg-[#00BFEB] active:scale-[0.99] transition-all disabled:opacity-25 disabled:cursor-not-allowed flex items-center gap-2 tracking-tight"
+          className="bg-[#4A7C59] text-white px-8 py-3 rounded-xl font-semibold text-sm hover:bg-[#3d6b4a] active:scale-[0.99] transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {currentQuestion === questions.length - 1 ? "See my results" : "Next question"}
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
