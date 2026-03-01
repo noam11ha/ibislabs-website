@@ -99,46 +99,41 @@ export default function HomePage() {
     <div>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="hero-grain overflow-hidden flex flex-col" style={{ minHeight: "100vh" }}>
+      <section className="hero-grain overflow-hidden" style={{ minHeight: "100vh" }}>
+        {/*
+          Simple block stack — no flex-grow tricks.
+          Order: label → headline → image → form. Nothing overlaps.
+        */}
+        <div className="flex flex-col items-center text-center px-4 sm:px-6 lg:px-8" style={{ paddingTop: "136px" }}>
 
-        {/* 1 + 2: Label & Headline */}
-        <div
-          className="flex flex-col items-center text-center px-4 sm:px-6 lg:px-8"
-          style={{ paddingTop: "140px", paddingBottom: "8px" }}
-        >
-          <p className="text-white/50 text-[11px] font-semibold uppercase tracking-[0.22em] mb-7">
+          {/* 1. Label */}
+          <p className="text-white/50 text-[11px] font-semibold uppercase tracking-[0.22em] mb-6">
             Personalized IBS Care
           </p>
+
+          {/* 2. Headline — Playfair bold, non-italic */}
           <h1
             style={{ fontFamily: "var(--font-playfair)" }}
-            className="text-[58px] sm:text-[74px] lg:text-[84px] font-bold text-white leading-[1.05] tracking-tight"
+            className="text-[56px] sm:text-[72px] lg:text-[84px] font-bold text-white leading-[1.05] tracking-tight mb-10"
           >
             Your gut, finally<br />understood.
           </h1>
-        </div>
 
-        {/* 3: Person image — explicit vh height, feet flush at bottom */}
-        <div className="flex flex-1 items-end justify-center overflow-hidden">
+          {/* 3. Person image — explicit size, centered, clear space above & below */}
           <img
             src="/person-man.png"
             alt=""
             style={{
-              height: "50vh",
+              height: "48vh",
               width: "auto",
-              maxWidth: "none",
               display: "block",
-              flexShrink: 0,
+              marginBottom: "40px",
             }}
           />
-        </div>
 
-        {/* 4: Form & microcopy */}
-        <div
-          className="flex flex-col items-center text-center px-4 sm:px-6 lg:px-8"
-          style={{ paddingTop: "28px", paddingBottom: "56px" }}
-        >
+          {/* 4. Form + microcopy */}
           <WaitlistForm variant="hero-green" />
-          <div className="mt-5 flex items-center gap-4">
+          <div className="mt-5 mb-14 flex items-center gap-4">
             <p className="text-white/45 text-xs">No spam. Unsubscribe anytime.</p>
             <span className="text-white/25 text-xs">·</span>
             <Link
@@ -148,8 +143,8 @@ export default function HomePage() {
               Or take the free IBS quiz
             </Link>
           </div>
-        </div>
 
+        </div>
       </section>
 
       {/* ── STATS STRIP ──────────────────────────────────────── */}
