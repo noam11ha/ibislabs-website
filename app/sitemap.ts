@@ -1,24 +1,11 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date("2026-07-24");
   return [
-    {
-      url: 'https://ibislabs.io',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://ibislabs.io/waitlist',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://ibislabs.io/blog',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-  ]
+    { url: "https://ibislabs.io", lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: "https://ibislabs.io/privacy-policy", lastModified, changeFrequency: "yearly", priority: 0.5 },
+    { url: "https://ibislabs.io/consumer-health-data-privacy-policy", lastModified, changeFrequency: "yearly", priority: 0.5 },
+    { url: "https://ibislabs.io/terms", lastModified, changeFrequency: "yearly", priority: 0.5 },
+  ];
 }

@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
   let email: string;
 
@@ -17,15 +15,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
 
+  const apiKey = process.env.RESEND_API_KEY;
+  const notificationEmail = process.env.WAITLIST_NOTIFICATION_EMAIL;
+  if (!apiKey || !notificationEmail) {
+    console.error("Waitlist email service is not configured.");
+    return NextResponse.json(
+      { error: "Waitlist service is temporarily unavailable." },
+      { status: 503 }
+    );
+  }
+
+  const resend = new Resend(apiKey);
+
   try {
     await resend.emails.send({
       from: "Ibis Labs Waitlist <onboarding@ibislabs.io>",
-      to: "noam11ha.apple@gmail.com",
-      subject: `New waitlist signup: ${email}`,
-      html: `
-        <p>A new user joined the Ibis Labs waitlist.</p>
-        <p><strong>Email:</strong> ${email}</p>
-      `,
+      to: notificationEmail,
+      subject: "New Ibis Labs waitlist signup",
+      text: `A new user joined the Ibis Labs waitlist.\n\nEmail: ${email}`,
     });
 
     return NextResponse.json({ success: true }, { status: 200 });
