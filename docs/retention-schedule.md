@@ -1,8 +1,8 @@
-# Proposed launch retention schedule
+# Approved launch retention schedule
 
-Status: **Recommendation for Noam's final approval before publication**
+Status: **Approved by Noam Hayoun on July 25, 2026**
 
-| Record | Proposed retention | Why this is proportionate |
+| Record | Retention | Why this is proportionate |
 |---|---:|---|
 | Quiz answers, inferred profile, session ID, associated name/email | 24 months from collection | Long enough to evaluate profile demand and support a returning prospect; short enough to avoid indefinite retention of sensitive data |
 | Funnel events, UTM/fbclid, user agent | 12 months | Covers seasonality and ad/funnel analysis without building a long-term activity history |
