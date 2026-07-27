@@ -87,7 +87,7 @@ export const generalPrivacyPolicy: LegalPolicy = {
       title: "Browser storage and advertising measurement",
       items: [
         { text: "The quiz uses session storage for a random session identifier and campaign parameters. This storage normally ends when you close the browser tab or session." },
-        { text: "Optional Meta advertising measurement is off unless you enable it on the quiz introduction screen. If enabled and you complete the quiz, Meta may receive a generic quiz-completion event, IP address, browser user-agent, the page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, gut profile, name, or email with Meta." },
+        { text: "Optional Meta advertising measurement is off unless you enable it on the quiz introduction screen. If enabled and you select Start, Meta may receive a generic quiz-start event, IP address, browser user-agent, the page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, quiz completion, gut profile, name, or email with Meta." },
         { text: "You can decline optional Meta measurement and still take the quiz and receive your result." },
       ],
     },
@@ -241,7 +241,7 @@ export const consumerHealthDataPolicy: LegalPolicy = {
           "Google Workspace processes a privacy request or support message if you contact us about your quiz data;",
           "Shopify, Allpay, Supliful, and shipping providers receive order information needed for checkout, payment, fulfillment, or delivery, but we do not send them your full quiz-answer record."
         ] },
-        { heading: "Optional Meta advertising measurement", text: "Meta measurement is off unless you enable it on the quiz introduction screen. If enabled and you complete the quiz, Meta may receive a generic quiz-completion event, IP address, browser user-agent, the quiz page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, gut profile, name, or email with Meta. You can decline this optional measurement and still use the quiz." },
+        { heading: "Optional Meta advertising measurement", text: "Meta measurement is off unless you enable it on the quiz introduction screen. If enabled and you select Start, Meta may receive a generic quiz-start event, IP address, browser user-agent, the quiz page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, quiz completion, gut profile, name, or email with Meta. You can decline this optional measurement and still use the quiz." },
         { heading: "Legal or transaction disclosures", text: "We may disclose data when reasonably necessary to comply with valid legal process, protect safety or rights, investigate fraud or a security incident, or complete a financing, merger, acquisition, reorganization, or sale of assets with appropriate safeguards." },
         { text: "We do not sell consumer health data. We do not disclose quiz answers or gut profiles to data brokers, use them to create advertising audiences, or allow a provider to use them for its own advertising.", bold: true },
       ],

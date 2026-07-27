@@ -10,7 +10,7 @@ Updated: July 24, 2026
 | Supabase `quiz_leads` | Email, response ID, session ID | Deliver protocol/checkout handoff and identify a privacy request | Database processor | **24 months after collection or last interaction** | Admin delete by normalized email or response ID |
 | Supabase `funnel_events` | Session ID, generic events, question number, UTMs, Meta click ID, user agent | Funnel analytics and troubleshooting | Database processor | **12 months** | Admin delete by session ID; scheduled age deletion |
 | Vercel | IP, user agent, URL, request/security logs | Host and secure website/quiz | Hosting processor | Provider/configured log period; target no more than 12 months | Provider controls / support request where available |
-| Meta (optional) | Generic `QuizComplete`, IP, user agent, clean page URL, `_fbp`/`_fbc` if present | Advertising measurement | Meta | Meta-controlled under account settings | Meta data controls/deletion mechanism where matchable |
+| Meta (optional) | Generic `QuizStart`, IP, user agent, clean page URL, `_fbp`/`_fbc` if present | Advertising measurement | Meta | Meta-controlled under account settings | Meta data controls/deletion mechanism where matchable |
 | Shopify | Account, cart, order, shipping, customer service | Store and order management | Commerce processor | Legal/order need | Shopify customer-data workflow |
 | Allpay (once activated) | Payment status, transaction and invoice details | Payment and invoicing | Payment processor | Legal/payment need | Provider workflow subject to legal retention |
 | Supliful / carrier | Order, product, recipient, address, fulfillment status | Fulfillment and delivery | Fulfillment processors | Legal/order need | Provider workflow subject to legal retention |
@@ -18,7 +18,7 @@ Updated: July 24, 2026
 
 ## Explicit data boundary
 
-Meta must never receive quiz answers, symptom selections, diagnoses, medication responses, red flags, inferred gut profile, protocol match, name, email, or URL query parameters. Optional Meta measurement is off by default.
+Meta must never receive quiz completion, quiz answers, symptom selections, diagnoses, medication responses, red flags, inferred gut profile, protocol match, name, email, or URL query parameters. Optional Meta measurement is off by default and is limited to the Start action.
 
 ## Known launch dependency
 

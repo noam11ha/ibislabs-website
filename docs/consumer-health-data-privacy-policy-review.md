@@ -58,7 +58,7 @@ Before the first health question, the quiz explains these purposes and links to 
 
 ### Optional Meta advertising measurement
 
-Meta measurement is off unless you enable it on the quiz introduction screen. If enabled and you complete the quiz, Meta may receive a generic quiz-completion event, IP address, browser user-agent, the quiz page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, gut profile, name, or email with Meta. You can decline this optional measurement and still use the quiz.
+Meta measurement is off unless you enable it on the quiz introduction screen. If enabled and you select Start, Meta may receive a generic quiz-start event, IP address, browser user-agent, the quiz page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, quiz completion, gut profile, name, or email with Meta. You can decline this optional measurement and still use the quiz.
 
 ### Legal or transaction disclosures
 

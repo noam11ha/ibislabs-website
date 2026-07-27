@@ -56,7 +56,7 @@ Third-party sites and services have their own privacy practices. For example, Sh
 
 The quiz uses session storage for a random session identifier and campaign parameters. This storage normally ends when you close the browser tab or session.
 
-Optional Meta advertising measurement is off unless you enable it on the quiz introduction screen. If enabled and you complete the quiz, Meta may receive a generic quiz-completion event, IP address, browser user-agent, the page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, gut profile, name, or email with Meta.
+Optional Meta advertising measurement is off unless you enable it on the quiz introduction screen. If enabled and you select Start, Meta may receive a generic quiz-start event, IP address, browser user-agent, the page URL without query parameters, and Meta browser identifiers if present. We never share your quiz answers, quiz completion, gut profile, name, or email with Meta.
 
 You can decline optional Meta measurement and still take the quiz and receive your result.
 

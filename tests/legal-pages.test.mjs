@@ -40,8 +40,9 @@ test('policy source identifies the real company and privacy contact', async () =
 
 test('consumer health policy states the Meta boundary and retention schedule', async () => {
   const source = await read('lib/legal-policies.ts');
-  assert.match(source, /generic quiz-completion event/i);
-  assert.match(source, /never share your quiz answers, gut profile, name, or email with Meta/i);
+  assert.match(source, /generic quiz-start event/i);
+  assert.match(source, /never share your quiz answers, quiz completion, gut profile, name, or email with Meta/i);
+  assert.doesNotMatch(source, /generic quiz-completion event/i);
   assert.match(source, /12 months/);
   assert.match(source, /24 months/);
   assert.match(source, /90 days/);
