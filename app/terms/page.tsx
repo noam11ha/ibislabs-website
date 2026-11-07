@@ -1,524 +1,104 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — IbisLabs",
-  description:
-    "Read the Ibis Labs Terms of Use. These terms govern your use of the Ibis Labs app and related services.",
+  title: "Terms of Use",
+  description: "Terms of Use for the Ibis Labs website, waitlist and products.",
 };
-
-const lastUpdated = "March 22, 2026";
-
-type ContentItem = {
-  heading?: string;
-  text?: string;
-  bold?: boolean;
-  list?: string[];
-  links?: { icon: string; label: string; href: string }[];
-};
-
-type Section = {
-  id: string;
-  title: string;
-  content: ContentItem[];
-};
-
-const sections: Section[] = [
-  {
-    id: "eligibility",
-    title: "Eligibility",
-    content: [
-      {
-        text: "You must be at least 18 years old and legally capable of entering into a binding agreement to use the Services. By using the Services, you represent and warrant that you meet these requirements.",
-      },
-    ],
-  },
-  {
-    id: "wellness-service-not-medical-care",
-    title: "Wellness service only; not medical care",
-    content: [
-      {
-        text: "Ibis Labs is a wellness, educational, and informational platform. The Services do not provide medical care, medical advice, diagnosis, treatment, or emergency services.",
-      },
-      {
-        text: "No content, tracking feature, recommendation, insight, guided session, pattern detection, symptom summary, score, or algorithmic output provided through the Services is intended to replace professional medical advice, diagnosis, or treatment from a licensed healthcare provider.",
-      },
-      {
-        text: "You should always consult a qualified healthcare professional regarding:",
-        list: [
-          "persistent or severe symptoms;",
-          "possible medication or supplement interactions;",
-          "pregnancy or breastfeeding questions;",
-          "significant dietary changes;",
-          "mental health concerns;",
-          "decisions about diagnosis or treatment.",
-        ],
-      },
-      {
-        text: "Do not ignore or delay seeking professional medical advice because of information from the Services.",
-      },
-      {
-        heading: "Emergency Notice",
-        text: "Do not use the Services for emergencies. If you think you may have a medical emergency, call 911 or your local emergency number immediately and seek emergency care.",
-        bold: true,
-      },
-    ],
-  },
-  {
-    id: "no-healthcare-provider-relationship",
-    title: "No healthcare provider relationship",
-    content: [
-      {
-        text: "Your use of the Services does not create a physician-patient, therapist-patient, dietitian-patient, fiduciary, or other professional relationship between you and Ibis Labs or between you and any advisor, contractor, or content contributor associated with Ibis Labs.",
-      },
-    ],
-  },
-  {
-    id: "description-of-the-services",
-    title: "Description of the services",
-    content: [
-      {
-        text: "The Services may include tools and content such as:",
-        list: [
-          "symptom and digestive health tracking;",
-          "bowel movement and stool logging;",
-          "food, ingredient, hydration, sleep, stress, mood, and cycle-related tracking;",
-          "guided wellness sessions and audio content;",
-          "trend summaries and insights;",
-          "personalized or semi-personalized wellness suggestions;",
-          "educational resources and habit-support features.",
-        ],
-      },
-      {
-        text: "These features are for general wellness and informational purposes only. They may be incomplete, inaccurate, unavailable, delayed, or unsuitable for your circumstances.",
-      },
-    ],
-  },
-  {
-    id: "user-responsibilities",
-    title: "User responsibilities",
-    content: [
-      {
-        text: "You are solely responsible for:",
-        list: [
-          "the accuracy of the information you provide;",
-          "decisions you make based on the Services;",
-          "consulting a healthcare professional where appropriate;",
-          "reviewing supplement labels, warnings, and instructions independently;",
-          "stopping use of the Services if use causes concern or discomfort.",
-        ],
-      },
-      {
-        text: "You agree not to rely on the Services as the sole basis for healthcare, medication, supplement, or treatment decisions.",
-      },
-    ],
-  },
-  {
-    id: "accounts-and-credentials",
-    title: "Accounts and credentials",
-    content: [
-      {
-        text: "You may need to create an account to access some features.",
-      },
-      {
-        text: "You agree to:",
-        list: [
-          "provide accurate and current information;",
-          "keep your credentials confidential;",
-          "notify us promptly of unauthorized account access or suspected security incidents;",
-          "use only your own account unless expressly authorized otherwise.",
-        ],
-      },
-      {
-        text: "You are responsible for activity that occurs under your account.",
-      },
-    ],
-  },
-  {
-    id: "acceptable-use",
-    title: "Acceptable use",
-    content: [
-      {
-        text: "You agree not to:",
-        list: [
-          "use the Services in violation of applicable law;",
-          "use the Services for emergency or crisis response;",
-          "submit false, misleading, or fraudulent information;",
-          "interfere with or disrupt the Services or related systems;",
-          "reverse engineer, scrape, copy, or exploit the Services except as permitted by law;",
-          "upload or transmit malware or harmful code;",
-          "impersonate another person or misrepresent affiliation;",
-          "use the Services to develop or benchmark a competing product in a prohibited manner;",
-          "submit unlawful, defamatory, infringing, abusive, or harmful content.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "user-content",
-    title: "User content",
-    content: [
-      {
-        text: "You may submit logs, notes, comments, messages, feedback, and other content (\"User Content\") through the Services.",
-      },
-      {
-        text: "You retain ownership of your User Content, but you grant Ibis Labs a worldwide, non-exclusive, royalty-free license to host, store, reproduce, process, analyze, adapt, and display User Content as necessary to operate, secure, improve, and provide the Services, and as otherwise described in the Privacy Policy.",
-      },
-      {
-        text: "You represent and warrant that you have the rights needed to provide your User Content and that it does not violate law or third-party rights.",
-      },
-    ],
-  },
-  {
-    id: "privacy",
-    title: "Privacy",
-    content: [
-      {
-        text: "Your use of the Services is also governed by our Privacy Policy, which is incorporated into these Terms by reference.",
-      },
-    ],
-  },
-  {
-    id: "apple-health-integrations",
-    title: "Apple Health and similar integrations",
-    content: [
-      {
-        text: "If you choose to connect Apple Health or another supported data source, you authorize us to access the categories of data you approve through those platforms.",
-      },
-      {
-        text: "You understand that:",
-        list: [
-          "those platforms are controlled by third parties, not Ibis Labs;",
-          "data supplied through those integrations may be inaccurate, incomplete, or delayed;",
-          "revoking permissions may reduce app functionality.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "subscriptions-and-billing",
-    title: "Subscriptions and billing",
-    content: [
-      {
-        text: "If you purchase a subscription or in-app purchase:",
-        list: [
-          "prices, features, and billing periods will be disclosed at purchase;",
-          "subscriptions may automatically renew unless canceled in accordance with the applicable store's rules;",
-          "billing, cancellation, and refunds may be handled by Apple or another platform, subject to that platform's terms and policies;",
-          "we may change prices prospectively as permitted by law and platform rules.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "feedback",
-    title: "Feedback",
-    content: [
-      {
-        text: "If you provide ideas, suggestions, or feedback, you grant Ibis Labs a perpetual, irrevocable, worldwide, royalty-free right to use and incorporate that feedback without restriction or compensation.",
-      },
-    ],
-  },
-  {
-    id: "intellectual-property",
-    title: "Intellectual property",
-    content: [
-      {
-        text: "The Services, including their software, design, content, branding, graphics, audio, compilations, and other materials, are owned by or licensed to Ibis Labs and are protected by intellectual property laws.",
-      },
-      {
-        text: "Subject to these Terms, we grant you a limited, revocable, non-exclusive, non-transferable license to use the Services for your personal, non-commercial use.",
-      },
-    ],
-  },
-  {
-    id: "third-party-services",
-    title: "Third-party services",
-    content: [
-      {
-        text: "The Services may link to or rely on third-party products, sites, tools, integrations, or services. Ibis Labs is not responsible for the availability, content, policies, accuracy, or practices of third parties.",
-      },
-    ],
-  },
-  {
-    id: "no-guarantee-of-results",
-    title: "No guarantee of results",
-    content: [
-      {
-        text: "We do not guarantee that use of the Services will:",
-        list: [
-          "improve symptoms;",
-          "identify the true cause of symptoms;",
-          "produce accurate trigger detection;",
-          "improve quality of life;",
-          "lead to any specific wellness or health outcome.",
-        ],
-      },
-      {
-        text: "Results vary by person. Some users may experience no benefit.",
-      },
-    ],
-  },
-  {
-    id: "disclaimer-of-warranties",
-    title: "Disclaimer of warranties",
-    content: [
-      {
-        text: 'TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICES ARE PROVIDED "AS IS," "AS AVAILABLE," AND "WITH ALL FAULTS."',
-        bold: true,
-      },
-      {
-        text: "IBIS LABS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, TITLE, ACCURACY, RELIABILITY, SECURITY, AND AVAILABILITY.",
-        bold: true,
-      },
-      {
-        text: "WE DO NOT WARRANT THAT THE SERVICES WILL BE ERROR-FREE, UNINTERRUPTED, SECURE, OR THAT ANY OUTPUTS, INSIGHTS, OR RECOMMENDATIONS WILL BE ACCURATE OR APPROPRIATE FOR YOU.",
-        bold: true,
-      },
-    ],
-  },
-  {
-    id: "limitation-of-liability",
-    title: "Limitation of liability",
-    content: [
-      {
-        text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, IBIS LABS AND ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, CONTRACTORS, LICENSORS, AND SERVICE PROVIDERS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OR BUSINESS INTERRUPTION, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SERVICES.",
-        bold: true,
-      },
-      {
-        text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE TOTAL AGGREGATE LIABILITY OF IBIS LABS FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE SERVICES OR THESE TERMS WILL NOT EXCEED THE GREATER OF: (A) THE AMOUNT YOU PAID TO IBIS LABS FOR THE SERVICES IN THE 12 MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM; OR (B) US $100.",
-        bold: true,
-      },
-      {
-        text: "NOTHING IN THESE TERMS EXCLUDES LIABILITY THAT CANNOT BE EXCLUDED UNDER APPLICABLE LAW.",
-        bold: true,
-      },
-    ],
-  },
-  {
-    id: "indemnification",
-    title: "Indemnification",
-    content: [
-      {
-        text: "You agree to defend, indemnify, and hold harmless Ibis Labs and its affiliates, officers, directors, employees, contractors, licensors, and service providers from and against claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or related to:",
-        list: [
-          "your use or misuse of the Services;",
-          "your violation of these Terms;",
-          "your violation of applicable law;",
-          "your User Content; or",
-          "your infringement of third-party rights.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "suspension-and-termination",
-    title: "Suspension and termination",
-    content: [
-      {
-        text: "We may suspend, limit, or terminate access to the Services at any time if we believe:",
-        list: [
-          "you violated these Terms;",
-          "your use creates risk for us or other users;",
-          "suspension is needed for legal, security, or operational reasons.",
-        ],
-      },
-      {
-        text: "You may stop using the Services at any time. If you want to delete your account, use the in-app deletion feature where available or contact us.",
-      },
-    ],
-  },
-  {
-    id: "changes-to-services-or-terms",
-    title: "Changes to the services or terms",
-    content: [
-      {
-        text: "We may modify, suspend, or discontinue any part of the Services at any time. We may also update these Terms from time to time. If we make material changes, we may provide notice through the app, website, email, or other reasonable means.",
-      },
-      {
-        text: "Your continued use of the Services after updated Terms become effective means the updated Terms apply going forward.",
-      },
-    ],
-  },
-  {
-    id: "governing-law-and-venue",
-    title: "Governing law and venue",
-    content: [
-      {
-        text: "These Terms are governed by the laws of the State of [State], without regard to conflict-of-law principles.",
-      },
-      {
-        text: "Unless applicable law requires otherwise, any dispute arising out of or relating to these Terms or the Services shall be brought exclusively in the state or federal courts located in [County, State], and you consent to their jurisdiction and venue.",
-      },
-    ],
-  },
-  {
-    id: "severability-waiver-assignment",
-    title: "Severability; waiver; assignment",
-    content: [
-      {
-        text: "If any provision of these Terms is found unenforceable, the remaining provisions will remain in effect.",
-      },
-      {
-        text: "Our failure to enforce any provision is not a waiver.",
-      },
-      {
-        text: "You may not assign these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, financing, reorganization, or sale of assets.",
-      },
-    ],
-  },
-];
 
 export default function TermsPage() {
   return (
-    <div className="pt-16 min-h-screen bg-[#FAF7F2]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <main>
+  <section className="page-hero band">
+    <div className="wrap">
+      <h1>Terms of Use</h1>
+      <p className="lede">Effective <span className="fill">[date]</span>. These terms apply to ibislabs.io, our waitlist and emails, and any Ibis Labs products you buy from us.</p>
+    </div>
+  </section>
+  <section className="legal band">
+    <div className="wrap">
+      <ul className="legal-toc" aria-label="Sections">
+        <li><a href="#t-who">Who we are</a></li>
+        <li><a href="#t-health">Health information</a></li>
+        <li><a href="#t-orders">Orders</a></li>
+        <li><a href="#t-subs">Subscriptions</a></li>
+        <li><a href="#t-returns">Returns</a></li>
+        <li><a href="#t-liability">Liability</a></li>
+        <li><a href="#t-contact">Contact</a></li>
+      </ul>
+      <div className="legal-body">
+        <h2 id="t-who">1. Who we are and agreeing to these terms</h2>
+        <p>This website is operated by <span className="fill">[Company legal name]</span>, a company incorporated in <span className="fill">[country]</span> (“Ibis Labs”, “we”, “us”, “our”). Our registered address is <span className="fill">[registered address]</span>.</p>
+        <p>By using this website, joining our waitlist, or buying a product from us, you agree to these Terms of Use and to our Privacy Policy. If you do not agree, please do not use the website or our products.</p>
+        <p>You must be at least 18 years old and able to enter a binding contract to buy from us. Our products are currently intended for sale in the United States only.</p>
 
-        {/* Header */}
-        <div className="mb-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#4A7C59] mb-5">
-            Legal
-          </p>
-          <h1
-            style={{ fontFamily: "var(--font-playfair)" }}
-            className="text-5xl sm:text-6xl font-bold text-[#1C1C1A] tracking-tight leading-tight mb-6"
-          >
-            Terms of Use
-          </h1>
-          <p className="text-[#6B6B67] text-lg leading-relaxed max-w-2xl">
-            These Terms of Use govern your use of the Ibis Labs mobile application,
-            website, content, features, and related services. By accessing or using
-            the Services, you agree to these Terms.
-          </p>
-          <p className="text-xs text-[#6B6B67]/60 mt-4">
-            Last updated: {lastUpdated}
-          </p>
-        </div>
+        <h2 id="t-waitlist">2. Waitlist and emails</h2>
+        <p>Before launch, you can leave your email address to hear when our products are available. Joining the waitlist does not reserve a product, guarantee availability, or create an obligation to buy. We will use your email to send launch news and related updates, as described in our Privacy Policy. You can unsubscribe at any time using the link in any email or by contacting us.</p>
 
-        {/* Medical disclaimer badge */}
-        <div className="bg-white border border-[#E8E4DC] rounded-2xl p-6 shadow-sm mb-12 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-xl bg-[#4A7C59]/10 flex items-center justify-center flex-shrink-0">
-            <svg
-              className="w-5 h-5 text-[#4A7C59]"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-              />
-            </svg>
-          </div>
-          <div>
-            <h2 className="font-bold text-[#1C1C1A] tracking-tight mb-1">
-              Not a medical service
-            </h2>
-            <p className="text-[#6B6B67] text-sm leading-relaxed">
-              Ibis Labs is designed for wellness and informational purposes only. It does
-              not provide medical advice, diagnosis, or treatment. Always consult a
-              qualified healthcare provider for medical decisions.
-            </p>
-          </div>
-        </div>
+        <h2 id="t-health">3. Health information and product disclaimer</h2>
+        <p><strong>Our products are dietary supplements, not medicines.</strong> The statements on this website and on our packaging have not been evaluated by the Food and Drug Administration. Our products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+        <p>The U.S. Food and Drug Administration does not approve dietary supplements before they are sold. Our products are manufactured by a third-party manufacturer in a facility that is registered with the FDA and follows current Good Manufacturing Practice (cGMP) regulations for dietary supplements <span className="fill">[confirm with manufacturer]</span>. Registration of a facility with the FDA does not mean the FDA has approved or endorsed that facility or our products.</p>
+        <p>Information on this website, in our emails and on our social channels is for general education only. It is not medical advice and is not a substitute for advice from a doctor, registered dietitian or other qualified healthcare professional. Do not ignore professional medical advice or delay seeking it because of something you read from us.</p>
+        <p>Speak to your doctor before using our products if you:</p>
+        <ul>
+          <li>are pregnant, trying to become pregnant, or breastfeeding;</li>
+          <li>have a diagnosed medical condition, including any digestive, bowel or swallowing condition;</li>
+          <li>take prescription or over-the-counter medication, since fiber can affect how some medications are absorbed;</li>
+          <li>have had surgery on your digestive tract;</li>
+          <li>notice a sudden change in bowel habits lasting more than two weeks, rectal bleeding, or severe or persistent abdominal pain.</li>
+        </ul>
+        <p>Fiber supplements should be taken with at least a full glass (8 fl oz) of water or other liquid. Taking them without enough liquid may cause swelling and blockage of the throat or esophagus, which may cause choking. Do not take them if you have difficulty swallowing. If you experience chest pain, vomiting, or difficulty swallowing or breathing after taking a fiber product, seek immediate medical attention. Always follow the directions and warnings on the product label. Keep out of reach of children.</p>
+        <p>Product descriptions, including claims about testing, sourcing, certifications and suitability for particular diets, apply to the products as sold by us and are based on information from our manufacturer and testing partners. Individual results vary. We do not promise any particular result.</p>
 
-        {/* Table of contents */}
-        <div className="bg-white border border-[#E8E4DC] rounded-2xl p-6 shadow-sm mb-12">
-          <h2 className="text-xs font-bold text-[#6B6B67] tracking-widest uppercase mb-4">
-            Contents
-          </h2>
-          <ol className="space-y-2">
-            {sections.map((section, i) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="text-sm text-[#4A7C59] hover:underline underline-offset-2"
-                >
-                  {i + 1}. {section.title.charAt(0).toUpperCase() + section.title.slice(1)}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <h2 id="t-orders">4. Orders, pricing and payment</h2>
+        <p>When sales open, all prices will be shown in U.S. dollars and may exclude applicable sales tax and shipping, which will be shown at checkout. Your order is an offer to buy. A contract is formed only when we send you an email confirming that your order has been accepted.</p>
+        <p>We may refuse or cancel an order, for example if a product is out of stock, if there is an obvious error in the price or description, if we suspect fraud, or if the order appears to be for resale. If we cancel an order after you have paid, we will refund you in full.</p>
+        <p>Payments are processed by third-party payment providers. We do not store your full card details. By placing an order you confirm that you are authorized to use the payment method you provide.</p>
 
-        {/* Terms sections */}
-        <div className="space-y-10">
-          {sections.map((section, i) => (
-            <div
-              key={section.id}
-              id={section.id}
-              className="bg-white border border-[#E8E4DC] rounded-2xl p-8 shadow-sm scroll-mt-24"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-xs font-bold text-[#4A7C59]/50 tracking-widest">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h2
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                  className="text-2xl font-bold text-[#1C1C1A] tracking-tight"
-                >
-                  {section.title.charAt(0).toUpperCase() + section.title.slice(1)}
-                </h2>
-              </div>
-              <div className="space-y-5">
-                {section.content.map((item, j) => (
-                  <div key={j}>
-                    {item.heading && (
-                      <h3 className="font-bold text-[#1C1C1A] tracking-tight mb-1.5 text-base">
-                        {item.heading}
-                      </h3>
-                    )}
-                    {item.text && (
-                      <p
-                        className={
-                          item.bold
-                            ? "text-sm font-semibold text-[#1C1C1A]"
-                            : "text-[#6B6B67] text-sm leading-relaxed"
-                        }
-                      >
-                        {item.text}
-                      </p>
-                    )}
-                    {item.list && (
-                      <ul className="mt-3 space-y-2">
-                        {item.list.map((li, k) => (
-                          <li key={k} className="flex items-start gap-2.5 text-[#6B6B67] text-sm leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#4A7C59] mt-1.5 flex-shrink-0" />
-                            {li}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {item.links && (
-                      <div className="space-y-2">
-                        {item.links.map((link) => (
-                          <a
-                            key={link.href}
-                            href={link.href}
-                            className="flex items-center gap-2 text-sm text-[#4A7C59] hover:underline underline-offset-2"
-                          >
-                            <span>{link.icon}</span>
-                            {link.label}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <h2 id="t-subs">5. Subscriptions and automatic renewal</h2>
+        <p>If you choose a subscription, you authorize us to charge your payment method automatically at the frequency and price shown at checkout until you cancel. We will tell you the price, the billing frequency, and how to cancel before you subscribe, and we will send a reminder before renewals where required by law.</p>
+        <p>You can skip, pause or cancel at any time from your account or by contacting us. Changes made at least <span className="fill">[number]</span> hours before your next billing date apply to that order. If we change the price of your subscription, we will give you at least <span className="fill">[number]</span> days’ notice so you can cancel first.</p>
 
-        {/* Footer note */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-[#6B6B67] leading-relaxed">
-            These Terms of Use may be updated periodically. We will notify you of
-            material changes via an in-app notice or other appropriate means before they take effect.
-          </p>
-        </div>
+        <h2 id="t-shipping">6. Shipping and delivery</h2>
+        <p>We currently ship to addresses in the United States. Delivery times shown at checkout are estimates and are not guaranteed. Risk of loss passes to you when your order is delivered to the carrier <span className="fill">[confirm]</span>. If your order has not arrived within <span className="fill">[number]</span> business days of shipping, contact us and we will help locate or replace it.</p>
+
+        <h2 id="t-returns">7. Returns and refunds</h2>
+        <p><span className="fill">[Return policy: for example, a 30-day money-back guarantee on your first order, and which products must be unopened]</span>. To request a refund, contact us with your order number. Approved refunds are made to your original payment method, usually within <span className="fill">[number]</span> business days. For safety reasons, opened products that are not covered by a guarantee cannot be returned.</p>
+
+        <h2 id="t-use">8. Using our website</h2>
+        <p>You agree not to use the website in a way that is unlawful, harmful or disruptive. This includes attempting to gain unauthorized access to our systems, interfering with the website’s operation, scraping it in bulk, or submitting false information. We may suspend access to the website or to any account at our discretion.</p>
+        <p>We may change, suspend or discontinue any part of the website or any product at any time. We do not guarantee that the website will always be available or free of errors.</p>
+
+        <h2 id="t-ip">9. Intellectual property</h2>
+        <p>The Ibis Labs name, logo, product names, packaging designs, photographs, text and other content on this website are owned by us or our licensors and are protected by intellectual property laws. You may view and share content for personal, non-commercial purposes, but you may not copy, modify, distribute or use it commercially without our written permission.</p>
+        <p>If you send us feedback, ideas or suggestions, you allow us to use them without restriction or payment to you.</p>
+
+        <h2 id="t-links">10. Third-party links and services</h2>
+        <p>The website may link to or rely on services run by others, such as payment providers, email providers and social networks. We are not responsible for their content, policies or practices, and your use of them is governed by their own terms.</p>
+
+        <h2 id="t-warranty">11. Disclaimer of warranties</h2>
+        <p className="caps">To the fullest extent permitted by law, the website and its content are provided “as is” and “as available”, without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose and non-infringement. Nothing in these terms limits any warranty that cannot be excluded under applicable law.</p>
+
+        <h2 id="t-liability">12. Limitation of liability</h2>
+        <p className="caps">To the fullest extent permitted by law, Ibis Labs and its officers, employees, manufacturers and partners will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of profits, data or goodwill, arising from your use of the website or our products. Our total liability for any claim relating to a product will not exceed the amount you paid for that product.</p>
+        <p>Nothing in these terms excludes or limits liability that cannot be excluded or limited by law, including liability for death or personal injury caused by negligence, or for fraud.</p>
+
+        <h2 id="t-indemnity">13. Indemnity</h2>
+        <p>You agree to indemnify and hold Ibis Labs harmless from claims, losses and costs (including reasonable legal fees) arising from your breach of these terms or your misuse of the website or our products, to the extent permitted by law.</p>
+
+        <h2 id="t-law">14. Governing law and disputes</h2>
+        <p>These terms are governed by the laws of <span className="fill">[governing law]</span>, without regard to conflict-of-law rules. If you have a concern, please contact us first so we can try to resolve it informally. If a dispute cannot be resolved within 30 days, it will be resolved <span className="fill">[courts or arbitration: to be decided with your lawyer]</span>.</p>
+
+        <h2 id="t-general">15. General</h2>
+        <p>If any part of these terms is found unenforceable, the rest remains in effect. Our failure to enforce a right is not a waiver of that right. You may not transfer your rights under these terms without our consent. These terms, together with our Privacy Policy and any terms shown at checkout, are the entire agreement between you and us about their subject.</p>
+
+        <h2 id="t-changes">16. Changes to these terms</h2>
+        <p>We may update these terms from time to time. The updated version will be posted on this page with a new effective date. Changes will not apply retroactively to orders already placed. If you keep using the website after changes take effect, you accept the updated terms.</p>
+
+        <h2 id="t-contact">17. Contact</h2>
+        <p>Questions about these terms, an order or a product can be sent to <a href="mailto:support@ibislabs.io">support@ibislabs.io</a> or by mail to <span className="fill">[registered address]</span>.</p>
       </div>
     </div>
+  </section>
+    </main>
   );
 }
