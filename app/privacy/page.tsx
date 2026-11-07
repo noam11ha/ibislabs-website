@@ -77,7 +77,7 @@ export default function PrivacyPage() {
             <p>We may update this Privacy Policy from time to time. The updated version will be posted on this page with a new date. If we make material changes, we will let you know by email or on the website.</p>
 
             <h2 id="p-contact">11. Contact us</h2>
-            <p>Questions or requests about your privacy can be sent to <a href="mailto:support@ibislabs.io">support@ibislabs.io</a>.</p>
+            <p>Ibis Labs Ltd, a company incorporated in Israel, is responsible for the information described in this policy. Questions or requests about your privacy can be sent to <a href="mailto:support@ibislabs.io">support@ibislabs.io</a> or by mail to Ibis Labs Ltd, 56 Hagalil St., Bat Hefer, Israel.</p>
           </div>
         </div>
       </section>
