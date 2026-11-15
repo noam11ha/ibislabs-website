@@ -3,8 +3,7 @@ import FiberChart from "@/components/FiberChart";
 /* Background photographs. Set a path (for example "/photos/routine.jpg") once the file is in
    public/photos. Each one is graded to black and white, darkened and faded into its section.
    Sections without a photo still get their light, glow and film-grain layers. */
-const PHOTOS: Record<"evidence" | "story" | "routine" | "standards" | "faq", string | null> = {
-  evidence: null,
+const PHOTOS: Record<"story" | "routine" | "standards" | "faq", string | null> = {
   story: null,
   routine: null,
   standards: null,
@@ -63,7 +62,7 @@ export default function Home() {
 
       {/* 2. Evidence: the fiber gap, with real cited data */}
       <section className="scene evidence" id="evidence">
-        <Backdrop photo={PHOTOS.evidence} beam glows={2} />
+        <Backdrop beam glows={2} />
         <div className="wrap evidence-grid">
           <div className="stack">
             <span className="kicker">The fiber gap</span>
