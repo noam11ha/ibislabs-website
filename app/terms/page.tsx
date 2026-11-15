@@ -27,7 +27,7 @@ export default function TermsPage() {
           </ul>
           <div className="legal-body">
             <h2 id="t-who">1. Who we are and agreeing to these terms</h2>
-            <p>This website is operated by Ibis Labs Ltd, a company incorporated in Israel (“Ibis Labs”, “we”, “us”, “our”). Our registered address is {ADDRESS}.</p>
+            <p>This website is operated by Ibis Labs Ltd, a company incorporated in Israel (“Ibis Labs”, “we”, “us”, “our”). Adjust is a brand of Ibis Labs Ltd. Our registered address is {ADDRESS}.</p>
             <p>By using this website or joining our waitlist, you agree to these Terms of Use and to our Privacy Policy. If you do not agree, please do not use the website.</p>
             <p>You must be at least 18 years old to join our waitlist.</p>
 

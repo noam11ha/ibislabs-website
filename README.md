@@ -1,11 +1,18 @@
-# ibislabs.io
+# ibislabs.io — Adjust
 
-Pre-launch site for Ibis Labs and Foundation Fiber (Next.js, deployed on Vercel).
+Investor-facing concept site for Adjust, a brand of Ibis Labs Ltd (Next.js, deployed on Vercel).
+Built to Adjust Master Brand Book v1.0 plus the founder clarifications of 15 Nov 2026.
 
-- `/` — launch page with email sign-up
-- `/terms`, `/privacy` — legal pages (Terms has bracketed blanks to fill before launch)
+- `/` — homepage: hero, fiber-gap chart, product, formula, why fiber, why Adjust, how to use, standards, FAQ, contact
+- `/terms`, `/privacy` — legal pages
 - `/investors` — unlisted investor page: not linked, not in the sitemap, `noindex`
-- `/api/waitlist` — saves each sign-up to the Resend "Foundation Fiber waitlist" segment, emails the owner, and sends new sign-ups a welcome email. Needs `RESEND_API_KEY` (optional `RESEND_SEGMENT_ID` overrides the segment).
+- `/api/waitlist` — unused for now (Resend sign-up endpoint, kept for later)
+
+Photos: set `HERO`, `PHOTO_WHY`, `PHOTO_ROUTINE` in `app/page.tsx` to files in `public/photos/`.
+With a lifestyle hero, the product section moves ahead of the chart automatically.
+
+Rules: no unverified claims, certifications, reviews or prices. Chart numbers and sources live in
+`components/FiberChart.tsx` and must change together.
 
 ```bash
 npm install

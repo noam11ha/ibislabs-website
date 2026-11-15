@@ -12,7 +12,7 @@ export default function InvestorsPage() {
   <section className="page-hero band">
     <div className="wrap">
       <h1>For investors</h1>
-      <p className="lede"><span className="fill">[One-line thesis: what Ibis Labs is building and why now]</span></p>
+      <p className="lede"><span className="fill">[One-line thesis: what Adjust is building and why now]</span></p>
     </div>
   </section>
   <div className="inv band">
