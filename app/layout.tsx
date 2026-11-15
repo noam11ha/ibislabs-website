@@ -23,7 +23,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#0b0b0b",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -31,14 +32,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <header className="site-header">
-          <div className="wrap">
+          <div className="bar">
             <Link className="wordmark" href="/" aria-label="Adjust, home">Adjust</Link>
             <nav className="site-nav" aria-label="Main">
               <Link href="/#product">Product</Link>
               <Link href="/#formula">Formula</Link>
-              <Link href="/#why-fiber">Why fiber</Link>
+              <Link href="/#evidence">Science</Link>
               <Link href="/#faq">FAQ</Link>
-              <Link className="btn" href="/#contact">Get in touch</Link>
+              <Link className="btn outline" href="/#contact">Get in touch</Link>
             </nav>
           </div>
         </header>
